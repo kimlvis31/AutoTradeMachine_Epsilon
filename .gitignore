@@ -1,0 +1,10 @@
+*
+!*/
+
+!*.py
+!README.md
+!.gitignore
+
+!AutoTradeMachine_Epsilon/data/binanceAPI/mrktRegTStamp.bin
+!AutoTradeMachine_Epsilon/data/dm/dmi.bin
+!AutoTradeMachine_Epsilon/data/imgs/*.png

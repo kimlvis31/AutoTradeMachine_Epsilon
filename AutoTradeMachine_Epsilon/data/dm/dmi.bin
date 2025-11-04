@@ -1,0 +1,4 @@
+driveName = ATM_DATASTORAGE
+autoCorruptionRemoval = None
+SDS_BINANCE = BTC/USDT
+SDS_BINANCE = BTC/USDT:USDT

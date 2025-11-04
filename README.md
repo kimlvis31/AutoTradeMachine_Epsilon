@@ -35,9 +35,9 @@ DAR is introduced to resolve this. Instead of dispatching a new data to the shar
     - Number of Parameters Per Kline Data: ~10 (This can vary depending on what the program requires and wants to keep track of, but generally includes timestamp, OHLC prices, volumes, etc.)  
     - Data Size Per Parameter Per Kline: 4 Bytes (Assuming float32)  
     - Total Size of Klines Data:  
-        1m: 3.2M *10*4 = ~128 MB (512 GB for 4000 assets)  
-        5m: 640K *10*4 = ~ 26 MB (104 GB for 4000 assets)  
-        1h: 53.3K*10*4 = ~2.1 MB (8.4 GB for 4000 assets)  
+        1m: ` 3.2M * 10 * 4 = ~128 MB` (512 GB for 4000 assets)  
+        5m: ` 640K * 10 * 4 = ~ 26 MB` (104 GB for 4000 assets)  
+        1h: `53.3K * 10 * 4 = ~2.1 MB` (8.4 GB for 4000 assets)  
     Details can vary. Not all assets are introduced into the market for this long and data can be saved in different formats and precisions. However, from the example above, it can easily be seen how heavy asset data can become. One sure thing is that trying to fetch all this data once program launches is impractical, and the best way to do this would be to build a local database, and load data that is only needed for view and analysis onto the RAM. In order to store such large volume of data, this version experimented with a framework for database management.  
   
 **5. New GUI Components**  

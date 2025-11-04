@@ -10,13 +10,10 @@ The main aspects of this version are:
 **2. Logger Class**  
     Introduced a logger class that can handle formatted console print and record printed messages.  
   
-**3. IPC DAR (Data Acquisition Request)**
+**3. IPC DAR (Data Acquisition Request)**  
 Alongside PRD (Pre-registered Data) and FAR (Function Activation Request), a new IPC mechanism is added.  
-
 Previously, a process could acquire data from other processes only by reading PRD entries in shared memory, or by sending a FAR and waiting for a response.  
-
 A problem with PRD is that it is a shared memory. Compared to updating a local memory, shared-memory update can be extremely slow, and this becomes a problem when frequent data updates are required.  
-    
 DAR is introduced to resolve this. Instead of dispatching a new data to the shared-memory every time it is updated, the local memory is updated. And only when a request is received via IPC, it is then automatically dispatched within the IPC module processing. When the data needs to be transferred every time it is updated, DAR would not be suitable. But when only the latest data is required (for instance, average IPC processing speed), DAR can avoid any unnecessary computation.  
   
 **4. Market Data Import And Local Management Process Evaluation**  
@@ -49,7 +46,10 @@ DAR is introduced to resolve this. Instead of dispatching a new data to the shar
         - Table View  
   
 **6. [REMOVED] Page Metadata Files**  
-    I realized that there isn't really a point in keeping the pages initialization data in external files. First it comes with a risk of initialization process crash if edited inappropriately (In fact, why would it be needed to be edited by non-developers anyways?). The major reason is that an activation of a GUI object will often trigger a unique function, which needs to be defined somewhere. Defining such functions with external files can be very difficult to debug, but more importantly, same with the objects themselves, they should not be edited by non-developers. Leaving such room for program compromise is absolutely unwanted.
+    I realized that there isn't really a point in keeping the pages initialization data in external files.  
+    First it comes with a risk of initialization process crash if edited inappropriately (In fact, why would it be needed to be edited by non-developers anyways?).  
+    The major reason is that an activation of a GUI object will often trigger a unique function, which needs to be defined somewhere.  
+    Defining such functions with external files can be very difficult to debug, but more importantly, same with the objects themselves, they should not be edited by non-developers. Leaving such room for program compromise is absolutely unwanted.
   
 **7. [REMOVED] GUI Framework**  
     'CTGO_Alpha.py' and 'GUIObjects_Alpha.py' have been replaced with:  

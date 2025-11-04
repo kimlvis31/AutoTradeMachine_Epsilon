@@ -173,7 +173,7 @@ class manager_BinanceAPI:
         self.marketData    = dict()
         self.idToAPISymbol = {'SPOT': dict(), 'USDS-M': {'PERP': dict(), 'CQ': dict(), 'NQ': dict()}, 'COIN-M': {'PERP': dict(), 'CQ': dict(), 'NQ': dict()}}
         for assetDictKey in marketData:
-            if assetDictKey == 'BTC/USDT:USDT':
+            if assetDictKey in {'BTC/USDT:USDT', 'ETH/USDT:USDT', 'XRP/USDT:USDT', 'ADA/USDT:USDT', 'SOL/USDT:USDT'}:
                 self.marketData[assetDictKey] = marketData[assetDictKey]
                 self.idToAPISymbol['USDS-M']['PERP'][self.marketData[assetDictKey]['id']] = assetDictKey
 

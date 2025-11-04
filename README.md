@@ -56,7 +56,10 @@ DAR is introduced to resolve this. Instead of dispatching a new data to the shar
         - 'ATM_Epsilon_tkinterExtension.py'  
         - 'ATM_Epsilon_tkinterExtension_MS.py'  
     I thought these names better reflect their true purpose as **Tkinter extension modules**.  
-  
+    
+***For demonstration purposes, only five asset datasets (BTC, ETH, XRP, ADA, and SOL) are imported from the server***  
+***The WebSocket feature is intentionally disabled. Pressing the asset subscription button will raise an exception. This is because the WebSocket connection in this version is still very experimental and unstable***  
+
 ---
 
 ### 🗓️ Project Duration
